@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <title>Images</title>
+    <style link="stylesheet" href="style.css"></style>
+</head>
+<body>
+    <h1>Image Slider</h1>
+    <img id="sliderimage" src="JavaScript B\images.jpg" alt="Image">
+    <button id="pbtn">Prious</button>
+    <button id="nbtn">Next</button>
+
+    <script>
+         const images=["images\type3_files","images\type3.html","images\type5.webp"];
+         
+         let currentIndex=0;
+
+         const slideimage=document.getElementById("sliderimage");
+         const pbtn=document.getElementById("pbtn");
+         const nbtn=document.getElementById("nbtn");
+
+
+         function updateImage(){
+            slideimage.src=images[currentIndex];      
+         }
+         pbtn.addEventListener("click",()=>{
+            curreIndex=(currentIndex-1+images.length)% images.length;
+            updateImage()
+         })
+         nbtn.addEventListener("click",()=>{
+            curreIndex=(currentIndex+1)% images.length;
+            updateImage()
+         })
+         updateImage()
+
+
+    </script>
+</body>
+</html>
